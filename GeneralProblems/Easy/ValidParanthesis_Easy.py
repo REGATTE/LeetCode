@@ -3,7 +3,7 @@ https://leetcode.com/problems/valid-parentheses/
 """
 
 class Solution(object):
-    def isValid(self, s: str) -> bool:
+    def isValid(s: str) -> bool:
         if s is None or len(s) == 0:
             return False
         stack = []
