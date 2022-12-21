@@ -15,3 +15,4 @@ class Solution(object):
             elif len(stack)==0 or symbols[ stack.pop() ] != brackets:
                 return False
         return len(stack) == 0
+
