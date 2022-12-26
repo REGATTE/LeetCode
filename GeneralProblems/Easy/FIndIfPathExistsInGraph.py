@@ -5,6 +5,12 @@ https://leetcode.com/problems/find-if-path-exists-in-graph/description/
 class Solution(object):
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
 
+        adj = collections.defaultdict(list)
+
+        for u, v in edges:
+            adj[u].append(v)
+            adj[v].append(u)
+            
         def depthFirstSearch(adj, source, destination):
             stack_dfs = [ source ]
             Lookup = set(stack_dfs)
@@ -17,9 +23,5 @@ class Solution(object):
                     Lookup.add(nei)
                     stack_dfs.append(nei)
             return False
-        
-        adj = collections.defaultdict(list)
-        for u, v in edges:
-            adj[u].append(v)
-            adj[v].append(u)
+    
         return depthFirstSearch(adj, source, destination)
