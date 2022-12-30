@@ -14,6 +14,7 @@ class Solution:
             return []
         
         queue_tree = collections.deque([root])
+        
         output = []
 
         while queue_tree:
