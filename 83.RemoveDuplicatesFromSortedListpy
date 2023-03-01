@@ -1,0 +1,17 @@
+"""
+https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+"""
+
+
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head is None or head.next is None:
+            return head
+
+        list = head
+        while(list.next!=None):
+            if list.val == list.next.val:
+                list.next = list.next.next
+            else:
+                list = list.next
+        return head
